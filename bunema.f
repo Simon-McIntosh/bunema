@@ -1,3 +1,22 @@
+      program main
+      implicit none
+      
+      ! Declare variables
+      real*8 :: psi(100), sia(100)
+      integer :: nwb, nhb, nwnh
+
+      ! Initialize variables
+      nwb = 10
+      nhb = 10
+      nwnh = 100
+
+      ! Call the subroutine
+      call buneto(psi, nwb, nhb, sia, nwnh)
+
+      ! End the program
+      stop
+      end program main
+
       subroutine buneto(psi,nwb,nhb,sia,nwnh)
 	include 'double.inc'
 c**********************************************************************
