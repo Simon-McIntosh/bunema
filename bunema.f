@@ -1,24 +1,5 @@
-      program main
-      implicit none
-      
-      ! Declare variables
-      real*8 :: psi(100), sia(100)
-      integer :: nwb, nhb, nwnh
-
-      ! Initialize variables
-      nwb = 10
-      nhb = 10
-      nwnh = 100
-
-      ! Call the subroutine
-      call buneto(psi, nwb, nhb, sia, nwnh)
-
-      ! End the program
-      stop
-      end program main
-
       subroutine buneto(psi,nwb,nhb,sia,nwnh)
-	include 'double.inc'
+	  include 'double.inc'
 c**********************************************************************
 c**                                                                  **
 c**     MAIN PROGRAM:  MHD FITTING CODE                              **
@@ -91,7 +72,7 @@ c**          05 03/85..........first created                         **
 c**                                                                  **
 c**                                                                  **
 c**********************************************************************
-	implicit real *8 (a-h,o-z)
+	  implicit real *8 (a-h,o-z)
 
       common/bunemn/m,n,s,shift,dr,dz
       dimension   g(300),p(300),c(300),d(300),temp(300)
