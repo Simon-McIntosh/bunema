@@ -3,8 +3,11 @@ FFLAGS = -w -ffixed-line-length-none -fd-lines-as-comments -fno-automatic -fPIC 
 
 all: bunema
 
-bunema: bunema.o
-	$(FC) $(FFLAGS) -o bunema bunema.o
+bunema: main.o bunema.o
+	$(FC) $(FFLAGS) -o bunema main.o bunema.o
+
+main.o: main.f
+	$(FC) $(FFLAGS) -c main.f
 
 bunema.o: bunema.f
 	$(FC) $(FFLAGS) -c bunema.f

@@ -32,7 +32,7 @@
       end program main
 
       subroutine buneto(psi,nwb,nhb,sia,nwnh)
-	include 'double.inc'
+	  include 'double.inc'
 c**********************************************************************
 c**                                                                  **
 c**     MAIN PROGRAM:  MHD FITTING CODE                              **
