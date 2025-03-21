@@ -1,3 +1,4 @@
 # Ignore object files and the executable
 *.o
 bunema
+bunema_out.dat
