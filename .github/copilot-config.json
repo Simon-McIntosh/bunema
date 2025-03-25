@@ -1,0 +1,18 @@
+{
+    "projectDescription": "A Fortran-based numerical computing project for MHD fitting that processes data using Buneman solver. The application reads from bunema_in.dat, processes the data through the buneto subroutine, and outputs results to bunema_out.dat for comparison with reference data.",
+    "contextualHelp": {
+      "buneto": "Subroutine that sets up arrays for Buneman's solver with floating-point exception handling",
+      "mainProgram": "Reads input data, calls the buneto subroutine, writes output, and compares results with reference data",
+      "dataFormat": "Using Fortran fixed-form with real*8 precision values in scientific notation"
+    },
+    "codeExamples": {
+      "fileReading": "Uses formatted file I/O with specific format statements: 2020 (5e16.9) and 2022 (5i5)",
+      "arrayProcessing": "Processes large arrays with numerical data, handling potential floating-point exceptions"
+    },
+    "codingStandards": {
+      "formatting": "Must use Fortran fixed-form format (columns 1-5 for labels, column 6 for continuation, columns 7-72 for code)",
+      "languageVersion": "Must adhere to Fortran 77 standards with no modern Fortran extensions",
+      "commentStyle": "Comments start with 'c' in column 1",
+      "lineLength": "Code must not exceed column 72"
+    }
+  }
