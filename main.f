@@ -13,28 +13,29 @@
       ! Initialize variables
       open (unit=nbunema,file='bunema_in.dat',form='formatted')    
       read (nbunema,2022) m,n,nwb,nhb,nwnh
-      write(*,*) 'nwnh =', nwnh
+
       read (nbunema,2020) s,shift,dr,dz
       read (nbunema,2020) (psi(i),i=1,nwnh)
       read (nbunema,2022) nwnh
-      write(*,*) 'nwnh =', nwnh
+
       read (nbunema,2020) (sia(i),i=1,nwnh)
       read (nbunema,2022) nwnh
-      write(*,*) 'nwnh =', nwnh
       close(nbunema)
-
-
-
-      ! Fill psi and sia with random values to avoid zero division
-      !call random_seed()
-      !do i = 1, 100
-      !  call random_number(psi(i))
-      !  call random_number(sia(i))
-      !end do
 
       ! Call the subroutine
       call buneto(psi, nwb, nhb, sia, nwnh)
 
+      ! Write output to bunema_out.dat
+      open (unit=nbunema,file='bunema_out.dat',form='formatted')
+      write (nbunema,2022) m,n,nwb,nhb,nwnh
+      write (nbunema,2020) s,shift,dr,dz
+      write (nbunema,2020) (psi(i),i=1,nwnh)
+      write (nbunema,2022) nwnh
+      write (nbunema,2020) (sia(i),i=1,nwnh)
+      write (nbunema,2022) nwnh
+      close(nbunema)
+
+      
 
 2020  format (5e16.9)
 2022  format (5i5)
